@@ -150,7 +150,10 @@
                             </thead>
 
                             <tbody>
-                                @dd($data)
+                                {{-- @dd(auth())  --}}
+                                @php
+                                    $data = auth()->user()->all();
+                                @endphp
                                 @foreach ($data as $user)
                                     
                                 <tr>
@@ -168,19 +171,20 @@
                                         <p class="text-sm font-weight-bold mb-0">{{ ($user->is_admin == 1) ? 'Admin' : 'Member'}}</p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">22/03/2022</p>
+                                        <p class="text-sm font-weight-bold mb-0">{{ $user->created_at->format('Y-m-d') }}</p>
                                     </td>
                                     <td class="align-middle text-end">
                                         <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                            <p class="text-sm font-weight-bold mb-0">Edit</p>
-                                            <p class="text-sm font-weight-bold mb-0 ps-2">Delete</p>
+                                            {{-- <p class="text-sm font-weight-bold mb-0">Edit</p> --}}
+                                            {{-- <p class="text-sm font-weight-bold mb-0 ps-2">Delete</p> --}}
+                                            <a href="/admin/delete/{{ $user->id }}" class="text-sm font-weight-bold mb-0 ps-0">Delete</a>
                                         </div>
                                     </td>
                                 </tr>
                                 
                                 @endforeach
 
-
+                            {{-- <div>
                                 <tr>
                                     <td>
                                         <div class="d-flex px-3 py-1">
@@ -277,7 +281,8 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                            </div> --}}
+                            
                             </tbody>
                         </table>
                     </div>

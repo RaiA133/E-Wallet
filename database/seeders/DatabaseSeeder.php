@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             'lastname' => 'Aswajjillah',
             'email' => 'rai010303@gmail.com',
             'password' => bcrypt('123123'),
-            'is_admin' => true
+            'is_admin' => true,
+            'created_at' => 20230616
             // 'tgl_lahir' => '20030301',
             // 'no_identity' => '2392482823',
             // 'hp' => '082832837132'

@@ -54,3 +54,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/delete/{id}', [AdminController::class, 'delete'])->name('delete_user');
