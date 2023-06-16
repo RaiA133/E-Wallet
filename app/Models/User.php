@@ -31,7 +31,8 @@ class User extends Authenticatable
         'tgl_lahir',
         'no_identity',
         'hp',
-        'is_admin'
+        'is_admin',
+        'picture'
     ];
 
     /**

@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('no_identity')->nullable();
             $table->string('hp')->nullable();
             $table->boolean('is_admin')->default(0);
+            $table->string('picture')->default('default-profile.jpg');
             $table->rememberToken();
             $table->timestamps();
         });
