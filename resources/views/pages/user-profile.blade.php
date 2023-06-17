@@ -16,7 +16,7 @@
                             {{ auth()->user()->firstname ?? 'Firstname' }} {{ auth()->user()->lastname ?? 'Lastname' }}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
-                            Nasabah BCA
+                            {{ ( auth()->user()->is_admin == 1) ? 'Admin' : 'Nasabah'}} BCA
                         </p>
                     </div>
                 </div>
