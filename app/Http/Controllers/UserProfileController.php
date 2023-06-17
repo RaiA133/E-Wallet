@@ -16,17 +16,17 @@ class UserProfileController extends Controller
     {
         $attributes = $request->validate([
             'username' => ['required', 'max:255', 'min:2'],
-            'firstname' => ['max:100'],
-            'lastname' => ['max:100'],
-            'email' => ['required', 'email', 'max:255',  Rule::unique('users')->ignore(auth()->user()->id),],
-            'address' => ['max:100'],
-            'city' => ['max:100'],
-            'country' => ['max:100'],
-            'postal' => ['max:100'],
-            'about' => ['max:255'],
+            'firstname' => ['required', 'max:100'],
+            'lastname' => ['required', 'max:100'],
+            'email' => ['required', 'email', 'max:255',  Rule::unique('users')->ignore(auth()->user()->id)],
+            'address' => ['required', 'max:100'],
+            'city' => ['required', 'max:100'],
+            'country' => ['required', 'max:100'],
+            'postal' => ['required', 'max:100'],
+            'about' => ['required', 'max:255'],
             'tgl_lahir' => ['required'],
             'no_identity' => ['required'],
-            'hp' => ['max:100']
+            'hp' => ['required', 'max:100']
         ]);
 
         auth()->user()->update([
@@ -43,6 +43,6 @@ class UserProfileController extends Controller
             'no_identity' => $request->get('no_identity'),
             'hp' => $request->get('hp'),
         ]);
-        return back()->with('succes', 'Profile succesfully updated');
+        return back()->with('success', 'Profile successfully updated');
     }
 }

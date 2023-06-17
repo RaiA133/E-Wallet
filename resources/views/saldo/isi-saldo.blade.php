@@ -44,11 +44,11 @@
                                     </div>
 
                                     <div class="text-center">
-                                        <div class="text-start w-100 mt-4 mb-0 py-0">Transfer Bank</div>
-                                        <button type="button" class="btn btn-lg btn-tranparant btn-lg border w-100 my-0">
+                                        <div class="text-start w-100 mt-4 mb-0 py-0">Dari Bank</div>
+                                        {{-- <button type="button" class="btn btn-lg btn-tranparant btn-lg border w-100 my-0">
                                             Saldo Rp. 3.500.000&nbsp;&nbsp;&nbsp;
                                             <i class="fa fa-chevron-right"></i>
-                                        </button>
+                                        </button> --}}
                                         <button type="button" class="btn btn-lg btn-tranparant btn-lg border w-100 my-0">
                                             <img width="70" src="/img/isi-saldo/bca-logo.png" alt="">&nbsp;&nbsp;&nbsp;
                                             <i class="fa fa-chevron-right"></i>
@@ -61,9 +61,13 @@
                                             <img width="50" src="/img/isi-saldo/bni-logo.png" alt="">&nbsp;&nbsp;&nbsp;
                                             <i class="fa fa-chevron-right"></i>
                                         </button>
+                                        <button type="button" class="btn btn-lg btn-tranparant btn-lg border w-100 my-0">
+                                            Bank Lain&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-chevron-right"></i>
+                                        </button>
                                     </div>
                                     <div class="text-center">
-                                        <div class="text-start w-100 mt-4 mb-0 py-0">Transfer Bank</div>
+                                        <div class="text-start w-100 mt-4 mb-0 py-0">Kunjungi Taller Terdekat</div>
                                         <button type="button" class="btn btn-lg btn-tranparant btn-lg border w-100 my-0">
                                             Isi Ke Admin&nbsp;&nbsp;&nbsp;
                                             <i class="fa fa-chevron-right"></i>

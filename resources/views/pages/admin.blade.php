@@ -10,13 +10,13 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Kunjungan Web</p>
                                 <h5 class="font-weight-bolder">
-                                    $53,000
+                                    2342
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">+55%</span>
-                                    since yesterday
+                                    Sejak kemarin
                                 </p>
                             </div>
                         </div>
@@ -35,13 +35,13 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Akun</p>
                                 <h5 class="font-weight-bolder">
-                                    2,300
+                                    {{ auth()->user()->count() }}
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">+3%</span>
-                                    since last week
+                                    dari minggu lalu
                                 </p>
                             </div>
                         </div>
@@ -60,13 +60,13 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Nasabah Baru</p>
                                 <h5 class="font-weight-bolder">
-                                    +3,462
+                                    +{{ auth()->user()->where('is_admin', 0)->count() }}
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                                    since last quarter
+                                    dari minggu lalu
                                 </p>
                             </div>
                         </div>
@@ -85,12 +85,12 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Transaksi</p>
                                 <h5 class="font-weight-bolder">
-                                    $103,430
+                                    +67
                                 </h5>
                                 <p class="mb-0">
-                                    <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
+                                    <span class="text-success text-sm font-weight-bolder">+5%</span> dari minggu lalu
                                 </p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
         <div class="col-lg-7 mb-lg-0 mb-4">
             <div class="card z-index-2 h-100">
                 <div class="card-header pb-0 pt-3 bg-transparent">
-                    <h6 class="text-capitalize">Sales overview</h6>
+                    <h6 class="text-capitalize">Chart Pengunjung Web</h6>
                     <p class="text-sm mb-0">
                         <i class="fa fa-arrow-up text-success"></i>
                         <span class="font-weight-bold">4% more</span> in 2021
@@ -126,7 +126,7 @@
         <div class="col-lg-5">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Users</h6>
+                    <h6>Akun Terdaftar</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0 " style="overflow: auto; height: 320px;">
@@ -183,105 +183,6 @@
                                 </tr>
                                 
                                 @endforeach
-
-                            {{-- <div>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-3 py-1">
-                                            <div>
-                                                <img src="./img/team-2.jpg" class="avatar me-3" alt="image">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Creator</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">22/03/2022</p>
-                                    </td>
-                                    <td class="align-middle text-end">
-                                        <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                            <p class="text-sm font-weight-bold mb-0">Edit</p>
-                                            <p class="text-sm font-weight-bold mb-0 ps-2">Delete</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-3 py-1">
-                                            <div>
-                                                <img src="./img/team-3.jpg" class="avatar me-3" alt="image">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Member</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">22/03/2022</p>
-                                    </td>
-                                    <td class="align-middle text-end">
-                                        <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                            <p class="text-sm font-weight-bold mb-0 cursor-pointer">Edit</p>
-                                            <p class="text-sm font-weight-bold mb-0 ps-2 cursor-pointer">Delete</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-3 py-1">
-                                            <div>
-                                                <img src="./img/team-2.jpg" class="avatar me-3" alt="image">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Creator</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">22/03/2022</p>
-                                    </td>
-                                    <td class="align-middle text-end">
-                                        <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                            <p class="text-sm font-weight-bold mb-0">Edit</p>
-                                            <p class="text-sm font-weight-bold mb-0 ps-2">Delete</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-3 py-1">
-                                            <div>
-                                                <img src="./img/team-3.jpg" class="avatar me-3" alt="image">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Member</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-sm font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">22/03/2022</p>
-                                    </td>
-                                    <td class="align-middle text-end">
-                                        <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                            <p class="text-sm font-weight-bold mb-0 cursor-pointer">Edit</p>
-                                            <p class="text-sm font-weight-bold mb-0 ps-2 cursor-pointer">Delete</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </div> --}}
                             
                             </tbody>
                         </table>
@@ -295,7 +196,7 @@
             <div class="card ">
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex justify-content-between">
-                        <h6 class="mb-2">Sales by Country</h6>
+                        <h6 class="mb-2">Nasabah Berdasarkan Negara</h6>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -305,18 +206,18 @@
                                 <td class="w-30">
                                     <div class="d-flex px-2 py-1 align-items-center">
                                         <div>
-                                            <img src="./img/icons/flags/US.png" alt="Country flag">
+                                            <img src="./img/icons/flags/IND.png" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
-                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
-                                            <h6 class="text-sm mb-0">United States</h6>
+                                            <p class="text-xs font-weight-bold mb-0">Negara:</p>
+                                            <h6 class="text-sm mb-0">Indonesia</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                        <h6 class="text-sm mb-0">2500</h6>
+                                        <p class="text-xs font-weight-bold mb-0">Akun:</p>
+                                        <h6 class="text-sm mb-0">{{ auth()->user()->where('country', 'indonesia')->count() }}</h6>
                                     </div>
                                 </td>
                                 <td>
@@ -339,15 +240,15 @@
                                             <img src="./img/icons/flags/DE.png" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
-                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <p class="text-xs font-weight-bold mb-0">Negara:</p>
                                             <h6 class="text-sm mb-0">Germany</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                        <h6 class="text-sm mb-0">3.900</h6>
+                                        <p class="text-xs font-weight-bold mb-0">Akun:</p>
+                                        <h6 class="text-sm mb-0">{{ auth()->user()->where('country', 'Germany')->count() }}</h6>
                                     </div>
                                 </td>
                                 <td>
@@ -370,15 +271,15 @@
                                             <img src="./img/icons/flags/GB.png" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
-                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <p class="text-xs font-weight-bold mb-0">Negara:</p>
                                             <h6 class="text-sm mb-0">Great Britain</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                        <h6 class="text-sm mb-0">1.400</h6>
+                                        <p class="text-xs font-weight-bold mb-0">Akun:</p>
+                                        <h6 class="text-sm mb-0">{{ auth()->user()->where('country', 'Great Britain')->count() }}</h6>
                                     </div>
                                 </td>
                                 <td>
@@ -401,15 +302,15 @@
                                             <img src="./img/icons/flags/BR.png" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
-                                            <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                            <p class="text-xs font-weight-bold mb-0">Negara:</p>
                                             <h6 class="text-sm mb-0">Brasil</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                                        <h6 class="text-sm mb-0">562</h6>
+                                        <p class="text-xs font-weight-bold mb-0">Akun:</p>
+                                        <h6 class="text-sm mb-0">{{ auth()->user()->where('country', 'Brasil')->count() }}</h6>
                                     </div>
                                 </td>
                                 <td>
@@ -443,9 +344,9 @@
                                     <i class="ni ni-mobile-button text-white opacity-10"></i>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                                    <span class="text-xs">250 in stock, <span class="font-weight-bold">346+
-                                            sold</span></span>
+                                    <h6 class="mb-1 text-dark text-sm">Pengunjung</h6>
+                                    <span class="text-xs">34 Online, <span class="font-weight-bold">346+
+                                            Offline</span></span>
                                 </div>
                             </div>
                             <div class="d-flex">
@@ -457,10 +358,10 @@
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex align-items-center">
                                 <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                                    <i class="ni ni-tag text-white opacity-10"></i>
+                                    <i class="ni ni-square-pin text-white opacity-10"></i>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <h6 class="mb-1 text-dark text-sm">Tickets</h6>
+                                    <h6 class="mb-1 text-dark text-sm">Bank Open</h6>
                                     <span class="text-xs">123 closed, <span class="font-weight-bold">15
                                             open</span></span>
                                 </div>
@@ -474,11 +375,11 @@
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex align-items-center">
                                 <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                                    <i class="ni ni-box-2 text-white opacity-10"></i>
+                                    <i class="ni ni-chat-round text-white opacity-10"></i>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                                    <span class="text-xs">1 is active, <span class="font-weight-bold">40
+                                    <h6 class="mb-1 text-dark text-sm">Laporan Users</h6>
+                                    <span class="text-xs">1 is Reported, <span class="font-weight-bold">40
                                             closed</span></span>
                                 </div>
                             </div>
@@ -494,7 +395,7 @@
                                     <i class="ni ni-satisfied text-white opacity-10"></i>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <h6 class="mb-1 text-dark text-sm">Happy users</h6>
+                                    <h6 class="mb-1 text-dark text-sm">Feedback Baik</h6>
                                     <span class="text-xs font-weight-bold">+ 430</span>
                                 </div>
                             </div>

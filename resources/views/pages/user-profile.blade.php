@@ -20,33 +20,7 @@
                         </p>
                     </div>
                 </div>
-                {{-- <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
-                    <div class="nav-wrapper position-relative end-0">
-                        <ul class="nav nav-pills nav-fill p-1" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link mb-0 px-0 py-1 active d-flex align-items-center justify-content-center "
-                                    data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
-                                    <i class="ni ni-app"></i>
-                                    <span class="ms-2">App</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center "
-                                    data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
-                                    <i class="ni ni-email-83"></i>
-                                    <span class="ms-2">Messages</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center "
-                                    data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
-                                    <i class="ni ni-settings-gear-65"></i>
-                                    <span class="ms-2">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> --}}
+                
             </div>
         </div>
     </div>
@@ -121,10 +95,22 @@
                                         <input class="form-control" type="text" name="city" value="{{ old('city', auth()->user()->city) }}">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Negara</label>
                                         <input class="form-control" type="text" name="country" value="{{ old('country', auth()->user()->country) }}">
+                                    </div>
+                                </div> --}}
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Negara</label>
+                                        <select name="country" id="" class="form-control">
+                                            <option value="Belum Pilih" selected="">Pilih Negara</option>
+                                            <option value="Indonesia" {{ (old('country', auth()->user()->country) == "Indonesia") ? 'selected' : '' }}>Indonesia</option>
+                                            <option value="Brasil"  {{ (old('country', auth()->user()->country) == "Brasil") ? 'selected' : '' }}>Brasil</option>
+                                            <option value="Great Britain"  {{ (old('country', auth()->user()->country) == "Great Britain") ? 'selected' : '' }}>Great Britain</option>
+                                            <option value="Germany"  {{ (old('country', auth()->user()->country) == "Germany") ? 'selected' : '' }}>Germany</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -139,6 +125,7 @@
                                         <input class="form-control" type="text" name="hp" value="{{ old('hp', auth()->user()->hp) }}">
                                     </div>
                                 </div>
+                                
                             </div>
                             <hr class="horizontal dark">
                             <p class="text-uppercase text-sm">Tentangku</p>

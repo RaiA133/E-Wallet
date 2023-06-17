@@ -14,12 +14,12 @@ class AdminController extends Controller
             'nasabah' => User::all()
         ]);
     }
-    public function delete(User $id)
-    {
-        $user = User::findOrFail($id);
-        // dd($user);
-        $user->delete();
-        session()->flash('success', 'User deleted successfully.');
-        return redirect()->route('pages.admin');
-    }
+    // public function delete(User $id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     // dd($user);
+    //     $user->delete();
+    //     session()->flash('success', 'User deleted successfully.');
+    //     return redirect()->route('pages.admin');
+    // }
 }
