@@ -54,15 +54,27 @@
                 </a>
             </li>
             @endif
+
+            {{-- LOGOUT BUTTON --}}
+            <li class="nav-item">
+                <form role="form" method="post" action="{{ route('logout') }}" id="logout-form" >
+                    @csrf
+                    <a style="padding-left: 25px" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-dark font-weight-bold">
+                        <i class="fa fa-sign-out text-sm opacity-10" aria-hidden="true"></i>
+                        <span class="nav-link-text ms-1">Log out</span>
+                    </a>
+                </form>
+            </li>
             
             <div class="text-center">
-                <div class="col-auto my-3">
+                <div class="col-auto my-2">
                     <a class="btn bg-gradient-dark mb-0" href="/isi"><i class="fa fa-arrow-up"></i>&nbsp;&nbsp;Isi Saldo</a>
                 </div>
-                <div class="col-auto my-3">
+                <div class="col-auto my-2">
                     <a class="btn bg-gradient-dark mb-0" href="/kirim"><i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Kirim Saldo</a>
                 </div>
             </div>
+
                 
         </ul>
     </div>
